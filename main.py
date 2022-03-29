@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, random
 from pygame.locals import *
 
 #Initializing 
@@ -17,6 +17,15 @@ DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 DISPLAYSURF.fill((255,255,255))
 pygame.display.set_caption("Game")
 
+class Enemy(pygame.sprite.Sprite):
+  def __init__(self):
+    super().__init__()
+    self.rect = self.image.get.rect()
+    self.rect.center = (random.randint(40, SCREEN_WIDTH-40), 0)
+
+  def draw(self, surface):
+    surface.blit(self.image, self,rect)
+    
 def main():
   print("Test")
 

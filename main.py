@@ -1,43 +1,33 @@
-import pygame, sys, random
+import pygame
 from pygame.locals import *
+import pygame_menu
 
 #Initializing 
-pygame.init()
+SCREEN_HEIGHT, SCREEN_WIDTH = 600, 600
+MENU_HEIGHT, MENU_WIDTH = 300, 400
 
-#Setting up FPS
-FPS = 60
-FramePerSec = pygame.time.Clock()
+def set_difficulty(value, difficulty):
+    # Do the job here !
+    pass
 
-#Other Variables for use in the program
-SCREEN_WIDTH = 500
-SCREEN_HEIGHT = 800
-
-#Create a white screen
-DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-DISPLAYSURF.fill((255,255,255))
-pygame.display.set_caption("Game")
-
-class Enemy(pygame.sprite.Sprite):
-  def __init__(self):
-    super().__init__()
-    self.rect = self.image.get.rect()
-    self.rect.center = (random.randint(40, SCREEN_WIDTH-40), 0)
-
-  def draw(self, surface):
-    surface.blit(self.image, self,rect)
-    
+def start_the_game():
+    # Do the job here !
+    pass
+  
 def main():
-  print("Test")
+  pygame.init()
+  FramePerSec = pygame.time.Clock()
 
-#Game Look
-while True:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      pygame.quit()
-      sys.exit()
+  displaysurface = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+  pygame.display.set_caption("GAME")
 
-  pygame.display.update()
-  FramePerSec.tick(FPS)
+  menu = pygame_menu.Menu('Welcome', MENU_WIDTH, MENU_HEIGHT, theme=pygame_menu.themes.THEME_BLUE)
+  menu.add.text_input('Name : ', default='John Doe')
+  menu.add.selector('Difficulty : ', [('Hard', 1), ('Easy', 2)], onchange=set_difficulty)
+  menu.add.button('Play', start_the_game)
+  menu.add.button('Quit', pygame_menu.events.EXIT)
 
+  menu.mainloop(displaysurface)
+  
 if __name__ == "__main__":
   main()

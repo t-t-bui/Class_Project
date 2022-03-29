@@ -6,10 +6,43 @@ category = "main"
 optional = false
 python-versions = ">=3.6"
 
+[[package]]
+name = "pygame-menu"
+version = "4.2.6"
+description = "A menu for pygame. Simple, and easy to use"
+category = "main"
+optional = false
+python-versions = ">=3.6, <4"
+
+[package.dependencies]
+pygame = ">=1.9.3"
+pyperclip = "*"
+typing-extensions = "*"
+
+[package.extras]
+docs = ["pygame (>=1.9.3)", "pyperclip", "typing-extensions", "sphinx", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
+test = ["pygame (>=1.9.3)", "pyperclip", "typing-extensions", "codecov", "nose"]
+
+[[package]]
+name = "pyperclip"
+version = "1.8.2"
+description = "A cross-platform clipboard module for Python. (Only handles plain text for now.)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "typing-extensions"
+version = "4.1.1"
+description = "Backported and Experimental Type Hints for Python 3.6+"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "f16d9f9458fcf1d54f29fbb73238498b66554552a2f7d271c3dc258c2cb78e84"
+content-hash = "9932c9e967ff6b7e460b2ea31b004539763162e3d6ee6542d1fd013a27f90e47"
 
 [metadata.files]
 pygame = [
@@ -71,4 +104,15 @@ pygame = [
     {file = "pygame-2.1.2-pp37-pypy37_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7fdb93b4282962c9a2ebf1af994ee698be823dd913218ed97a5f2fb372b10b66"},
     {file = "pygame-2.1.2-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1fddec8829e96424800c806582d73a5173b7d48946cccf7d035839ca09850db8"},
     {file = "pygame-2.1.2.tar.gz", hash = "sha256:d6d0eca28f886f0477cd0721ac688189155a587f2bb8eae740e52ca56c3ad23c"},
+]
+pygame-menu = [
+    {file = "pygame-menu-4.2.6.tar.gz", hash = "sha256:88fe2b0b4c6c63e9911f332eb9066e9eb48c5167f4afe19c3012e5084a05e7eb"},
+    {file = "pygame_menu-4.2.6-py3-none-any.whl", hash = "sha256:8bffffbe9e125249e2538727e072565c134cb970a9999b5f988d1a3768fa1d7c"},
+]
+pyperclip = [
+    {file = "pyperclip-1.8.2.tar.gz", hash = "sha256:105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"},
+]
+typing-extensions = [
+    {file = "typing_extensions-4.1.1-py3-none-any.whl", hash = "sha256:21c85e0fe4b9a155d0799430b0ad741cdce7e359660ccbd8b530613e8df88ce2"},
+    {file = "typing_extensions-4.1.1.tar.gz", hash = "sha256:1a9462dcc3347a79b1f1c0271fbe79e844580bb598bafa1ed208b94da3cdcd42"},
 ]
